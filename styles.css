@@ -1,0 +1,280 @@
+:root {
+    --primary-color: #6c63ff;
+    --secondary-color: #4d44db;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --success-color: #28a745;
+    --text-color: #495057;
+    --border-radius: 8px;
+    --box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    --sidebar-width: 200px;
+    --header-height: 100px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    color: var(--text-color);
+}
+
+/* Header Styles */
+.header {
+    background: white;
+    box-shadow: var(--box-shadow);
+    position: relative;
+    z-index: 10;
+}
+
+.header .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.header h1 {
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.horizontal-ad {
+    background: #e9ecef;
+    padding: 15px;
+    text-align: center;
+    border-top: 1px solid #dee2e6;
+}
+
+/* Main Layout */
+.main-container {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: calc(100vh - var(--header-height));
+}
+
+.sidebar {
+    width: var(--sidebar-width);
+    padding: 15px;
+}
+
+.left-sidebar {
+    order: 1;
+}
+
+.right-sidebar {
+    order: 3;
+}
+
+.content {
+    flex: 1;
+    order: 2;
+    padding: 0 20px;
+    min-width: 0;
+}
+
+/* Description Section */
+.description {
+    background: white;
+    padding: 25px;
+    border-radius: var(--border-radius);
+    margin-top: 30px;
+    box-shadow: var(--box-shadow);
+}
+
+.description h2 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.description p {
+    line-height: 1.6;
+}
+
+/* Calculator Styles */
+.calculator-container {
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 30px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.calculator {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.date-input {
+    padding: 12px 15px;
+    border: 2px solid #e9ecef;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    transition: all 0.3s ease;
+    outline: none;
+    background: white;
+}
+
+.date-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.2);
+}
+
+.calculate-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    grid-column: span 2;
+}
+
+.calculate-btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.calculate-btn:active {
+    transform: translateY(0);
+}
+
+/* Output Styles */
+.output-container {
+    margin-top: 20px;
+    background: var(--light-color);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    box-shadow: var(--box-shadow);
+    grid-column: span 2;
+}
+
+.duration-output {
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.duration-output p {
+    margin-bottom: 8px;
+}
+
+.duration-output strong {
+    color: var(--primary-color);
+}
+
+/* Ad Placeholder Styles */
+.ad-placeholder {
+    background: #e9ecef;
+    border: 2px dashed #adb5bd;
+    border-radius: var(--border-radius);
+    padding: 40px 20px;
+    text-align: center;
+    color: #6c757d;
+    font-weight: bold;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Flatpickr Calendar Overrides */
+.flatpickr-calendar {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    border-radius: var(--border-radius);
+}
+
+.flatpickr-day.selected {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.flatpickr-day.today {
+    border-color: var(--primary-color);
+}
+
+.flatpickr-day:hover {
+    background: #e0e0ff;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    :root {
+        --sidebar-width: 150px;
+    }
+}
+
+@media (max-width: 992px) {
+    .sidebar {
+        display: none;
+    }
+    
+    .content {
+        padding: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .calculator {
+        grid-template-columns: 1fr;
+    }
+    
+    .calculate-btn, .output-container {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 576px) {
+    .header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .calculator-container {
+        padding: 20px;
+    }
+    
+    .description {
+        padding: 20px;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
