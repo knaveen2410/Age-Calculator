@@ -196,10 +196,7 @@ body {
 
 /* Ad Placeholder Styles */
 .ad-placeholder {
-    background: #e9ecef;
-    border: 2px dashed #adb5bd;
     border-radius: var(--border-radius);
-    padding: 40px 20px;
     text-align: center;
     color: #6c757d;
     font-weight: bold;
